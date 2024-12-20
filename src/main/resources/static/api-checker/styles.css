@@ -1,0 +1,168 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.group {
+    margin-top: 20px;
+}
+
+.group h2 {
+    color: #444;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.api-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.api-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 0.95rem;
+}
+
+.api-item.checked {
+    background-color: #e3fcef;
+    border-color: #28a745;
+}
+
+.api-item.unchecked {
+    background-color: #fef2f2;
+    border-color: #dc3545;
+}
+
+.api-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.http-method {
+    font-weight: 900;
+    color: #007bff;
+    text-transform: uppercase;
+    min-width: 70px;
+    flex-shrink: 0;
+}
+
+.api-path {
+    font-weight: 600;
+    color: #333;
+    font-family: Arial, sans-serif;
+    min-width: 200px;
+    flex-grow: 1;
+}
+
+.api-description {
+    color: #777;
+    margin: 0 auto;
+    white-space: normal;
+    word-break: break-word;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.checkbox {
+    transform: scale(1.3);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.swagger-link {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.swagger-link:hover {
+    text-decoration: underline;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-container select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 300px;
+}
+
+.swagger-link {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-left: 10px;
+    color: #ffffff; /* 흰색 텍스트 */
+    background-color: #85EA2D; /* Swagger 녹색 */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swagger-link:hover {
+    background-color: #6FC120; /* Hover 시 더 어두운 녹색 */
+    transform: translateY(-2px); /* 버튼 약간 위로 올라가는 효과 */
+}
+
+.swagger-link:active {
+    background-color: #5A9C1B; /* 클릭 시 더 어두운 녹색 */
+    transform: translateY(1px); /* 클릭 시 약간 아래로 눌리는 효과 */
+}
+
+.success,
+.error {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.success {
+    color: #28a745;
+}
+
+.error {
+    color: #dc3545;
+}
