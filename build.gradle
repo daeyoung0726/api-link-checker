@@ -1,11 +1,19 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.3.7'
     id 'io.spring.dependency-management' version '1.1.7'
+    id "com.vanniktech.maven.publish" version "0.28.0"
+    id 'signing'
 }
 
-group = 'project'
-version = '0.0.1-SNAPSHOT'
+group = 'io.github.deayoung0726'
+version = '0.0.2'
+
+signing {
+    sign publishing.publications
+}
 
 java {
     toolchain {
@@ -18,9 +26,53 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.3.7'
+}
+
+tasks {
+    bootJar {
+        enabled = false
+    }
+
+    jar {
+        enabled = true
+    }
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+
+    signAllPublications()
+
+    coordinates("io.github.daeyoung0726", "api-link-checker", "0.0.2")
+
+    pom {
+        name = "api-link-checker"
+        description = "A lightweight library for tracking and managing API links with Swagger integration and real-time UI updates."
+        inceptionYear = "2024"
+        url = "https://github.com/daeyoung0726/api-link-checker"
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+        }
+        developers {
+            developer {
+                id = "deayoung0726"
+                name = "Daeyoung Park"
+                url = "https://github.com/daeyoung0726"
+            }
+        }
+        scm {
+            connection = "scm:git:github.com/daeyoung0726/api-link-checker.git"
+            developerConnection = "scm:git:ssh://github.com:daeyoung0726/api-link-checker.git"
+            url = "https://github.com/daeyoung0726/api-link-checker/tree/main"
+        }
+    }
 }
