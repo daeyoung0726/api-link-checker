@@ -9,7 +9,7 @@ plugins {
 }
 
 group = 'io.github.deayoung0726'
-version = '0.0.2'
+version = '0.0.3'
 
 signing {
     sign publishing.publications
@@ -49,7 +49,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates("io.github.daeyoung0726", "api-link-checker", "0.0.2")
+    coordinates("io.github.daeyoung0726", "api-link-checker", "0.0.3")
 
     pom {
         name = "api-link-checker"
