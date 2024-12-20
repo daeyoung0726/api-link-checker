@@ -72,7 +72,6 @@ function renderApiGroups(groups) {
 
             const swaggerLink = swaggerLinks[`${api.httpMethod}_${api.path}`] || '';
 
-            console.log(swaggerLink);
             apiItem.innerHTML = `
                 <div class="api-text">${formattedText}</div>
                 <a href="${swaggerBase}${swaggerLink.replace(/^\/+/, '')}" target="_blank" class="swagger-link">[Swagger]</a>
