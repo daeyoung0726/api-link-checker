@@ -7,7 +7,7 @@
 ## 🚨 Important Notice
 
 `0.0.5` 이전 버전에서 오류가 발생할 수 있습니다.  
-👉 **최신 버전(0.0.5 이상)**을 사용해 주세요.  
+👉 **최신 버전(0.0.5 이상)** 을 사용해 주세요.  
 Critical issues have been identified in versions earlier than `0.0.5`.  
 👉 Please use **version 0.0.5 or later**.
 
@@ -67,7 +67,7 @@ implementation 'io.github.daeyoung0726:api-link-checker:{version}'
 
 #### 1. 애플리케이션에서 활성화하기
 
-@EnableApiLinkChecker 애너테이션으로 라이브러리를 활성화합니다.
+`@EnableApiLinkChecker` 애너테이션으로 라이브러리를 활성화합니다.
 
 ``` java
 @SpringBootApplication
@@ -79,9 +79,11 @@ public class MyApplication {
 }
 ```
 
-#### 2. API 그룹 정의하기
+#### 2. API 그룹 정의하기 및 API 메서드 추적
 
-@ApiGroup을 사용하여 API 그룹을 정의합니다.
+`@ApiGroup`을 사용하여 API 그룹을 정의합니다.
+
+`@TrackApi`를 사용하여 각 API 메서드에 설명을 추가하고 호출을 추적할 수 있습니다.
 
 ``` java
 @ApiGroup(value = "사용자 API")
@@ -194,7 +196,7 @@ implementation 'io.github.daeyoung0726:api-link-checker:{version}'
 
 #### 1. Enable in Your Application
 
-Activate the library by adding the @EnableApiLinkChecker annotation.
+Activate the library by adding the `@EnableApiLinkChecker` annotation.
 
 ``` java
 @SpringBootApplication
@@ -206,9 +208,11 @@ public class MyApplication {
 }
 ```
 
-#### 2. Define API Groups
+#### 2. Define API Groups and Track API Methods
 
-Define API groups using the @ApiGroup annotation.
+Define API groups using the `@ApiGroup` annotation.  
+
+Use the `@TrackApi` annotation to add descriptions to individual API methods and track their calls.
 
 ``` java
 @ApiGroup(value = "User API")
