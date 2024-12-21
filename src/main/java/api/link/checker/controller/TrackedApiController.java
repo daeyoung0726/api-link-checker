@@ -3,7 +3,6 @@ package api.link.checker.controller;
 import api.link.checker.core.ApiCheckRepository;
 import api.link.checker.core.ApiInfo;
 import api.link.checker.core.SwaggerService;
-import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@Hidden
 @RestController
 @RequestMapping("/v1/api/link/checker")
 public class TrackedApiController {
