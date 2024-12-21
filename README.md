@@ -4,6 +4,13 @@
 
 ---
 
+## 🚨 Important Notice
+
+`0.0.5` 이전 버전에서 오류가 발생할 수 있습니다.  
+👉 **최신 버전(0.0.5 이상)**을 사용해 주세요.  
+Critical issues have been identified in versions earlier than `0.0.5`.  
+👉 Please use **version 0.0.5 or later**.
+
 ## Demo Video
 
 
@@ -54,7 +61,7 @@ RESTful API 설정 데이터를 로컬 파일 시스템에 JSON 형식으로 저
 implementation 'io.github.daeyoung0726:api-link-checker:{version}'
 ```
 
-`ex) implementation 'io.github.daeyoung0726:api-link-checker:0.0.3'`
+`ex) implementation 'io.github.daeyoung0726:api-link-checker:0.0.5'`
 
 ### 4. 사용법
 
@@ -181,7 +188,7 @@ The configuration data for RESTful APIs is persistently stored as a JSON file on
 ```xml
 implementation 'io.github.daeyoung0726:api-link-checker:{version}'
 ```
-`ex) implementation 'io.github.daeyoung0726:api-link-checker:0.0.3'`
+`ex) implementation 'io.github.daeyoung0726:api-link-checker:0.0.5'`
 
 ### 4. How to Use
 
