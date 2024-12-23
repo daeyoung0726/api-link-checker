@@ -59,9 +59,21 @@ public class ApiScanner implements ApplicationListener<ContextRefreshedEvent> {
             String groupName = apiGroup.value();
             List<ApiInfo> apiInfos = new ArrayList<>();
 
-            for (Method method : beanClass.getDeclaredMethods()) {
-                if (method.isAnnotationPresent(TrackApi.class)) {
-                    TrackApi trackApi = method.getAnnotation(TrackApi.class);
+            for (Method method : beanClass.getMethods()) {
+                TrackApi trackApi = AnnotationUtils.findAnnotation(method, TrackApi.class);
+
+                if (trackApi == null) {
+                    for (Class<?> iface : beanClass.getInterfaces()) {
+                        try {
+                            Method interfaceMethod = iface.getMethod(method.getName(), method.getParameterTypes());
+                            trackApi = AnnotationUtils.findAnnotation(interfaceMethod, TrackApi.class);
+                            if (trackApi != null) break;
+                        } catch (NoSuchMethodException ignored) {
+                        }
+                    }
+                }
+
+                if (trackApi != null) {
                     String httpMethod = findHttpMethod(method);
                     String path = findPath(beanClass, method);
 
