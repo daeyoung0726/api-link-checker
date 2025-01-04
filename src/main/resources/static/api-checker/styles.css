@@ -66,6 +66,7 @@ h1 {
     align-items: center;
     gap: 20px;
     width: 100%;
+    margin-right: 5px;
 }
 
 .http-method {
@@ -93,26 +94,55 @@ h1 {
     text-align: left;
 }
 
+.api-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.api-nickname {
+    font-style: italic;
+    color: #6c757d;
+    white-space: nowrap;
+}
+
+.reset-nickname {
+    margin-left: 10px;
+    background: #007bff;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reset-nickname:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.reset-nickname:active {
+    background: #003f7f;
+    transform: translateY(1px);
+}
+
 .checkbox {
     transform: scale(1.3);
     cursor: pointer;
     margin-left: 10px;
 }
 
-.swagger-link {
-    color: #007bff;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.swagger-link:hover {
-    text-decoration: underline;
-}
-
 .filter-container {
     display: flex;
+    align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    gap: 10px;
 }
 
 .filter-container select {
@@ -120,16 +150,105 @@ h1 {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 50%;
+    width: 200px;
     max-width: 300px;
+}
+
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #ffffff;
+    color: #333;
+    width: 400px;
+    max-width: 90%;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: scaleUp 0.3s ease-in-out forwards;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.modal-content input:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.modal-content button {
+    background: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.modal-content button:active {
+    transform: translateY(1px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 .swagger-link {
     display: inline-block;
     padding: 6px 12px;
     margin-left: 10px;
-    color: #ffffff; /* 흰색 텍스트 */
-    background-color: #85EA2D; /* Swagger 녹색 */
+    color: #ffffff;
+    background-color: #85EA2D;
     border: none;
     border-radius: 5px;
     font-weight: bold;
@@ -138,16 +257,17 @@ h1 {
     font-size: 0.9rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
 .swagger-link:hover {
-    background-color: #6FC120; /* Hover 시 더 어두운 녹색 */
-    transform: translateY(-2px); /* 버튼 약간 위로 올라가는 효과 */
+    background-color: #6FC120;
+    transform: translateY(-2px);
 }
 
 .swagger-link:active {
-    background-color: #5A9C1B; /* 클릭 시 더 어두운 녹색 */
-    transform: translateY(1px); /* 클릭 시 약간 아래로 눌리는 효과 */
+    background-color: #5A9C1B;
+    transform: translateY(1px);
 }
 
 .success,

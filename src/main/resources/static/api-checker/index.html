@@ -14,11 +14,22 @@
         <select id="group-filter">
             <option value="">All Groups</option>
         </select>
+        <button id="reset-nickname" class="reset-nickname">Reset Nickname</button>
     </div>
 
     <div id="api-groups"></div>
     <div id="message" class="success"></div>
+
 </div>
+
+<div id="nickname-modal" class="modal">
+    <div class="modal-content">
+        <h2>Enter your Nickname</h2>
+        <input type="text" id="nickname-input" placeholder="Nickname">
+        <button id="set-nickname">Submit</button>
+    </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>

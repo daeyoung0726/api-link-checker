@@ -4,9 +4,46 @@ const swaggerBase = '/swagger-ui/index.html#/';
 const apiGroupsDiv = document.getElementById('api-groups');
 const messageDiv = document.getElementById('message');
 const filterDropdown = document.getElementById('group-filter');
+const nicknameModal = document.getElementById('nickname-modal');
+const nicknameInput = document.getElementById('nickname-input');
+const setNicknameButton = document.getElementById('set-nickname');
+const resetNicknameButton = document.getElementById('reset-nickname');
 
 let allGroups = {};
 let swaggerLinks = {};
+
+function setNicknameAndCloseModal() {
+    nickname = nicknameInput.value.trim();
+    if (nickname) {
+        localStorage.setItem('nickname', nickname);
+        nicknameModal.classList.remove('active');
+    } else {
+        showMessage('Nickname cannot be empty!', 'error');
+    }
+}
+
+function getNickname() {
+    return localStorage.getItem('nickname');
+}
+
+setNicknameButton.addEventListener('click', setNicknameAndCloseModal);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedNickname = getNickname();
+    if (savedNickname) {
+        nicknameModal.classList.remove('active');
+    } else {
+        nicknameModal.classList.add('active');
+    }
+});
+
+function resetNickname() {
+    localStorage.removeItem('nickname');
+    nicknameModal.classList.add('active');
+    showMessage('Nickname has been reset. Please enter a new nickname.', 'success');
+}
+
+resetNicknameButton.addEventListener('click', resetNickname);
 
 async function fetchApiGroups() {
     try {
@@ -71,9 +108,11 @@ function renderApiGroups(groups) {
             const formattedText = formatApiText(api.httpMethod, api.path, api.description);
 
             const swaggerLink = swaggerLinks[`${api.httpMethod}_${api.path}`] || '';
+            const nickname = api.nickname ? `<span class="api-nickname">[${api.nickname}]</span>` : '';
 
             apiItem.innerHTML = `
                 <div class="api-text">${formattedText}</div>
+                ${nickname}
                 <a href="${swaggerBase}${swaggerLink.replace(/^\/+/, '')}" target="_blank" class="swagger-link">[Swagger]</a>
                 <input type="checkbox" class="checkbox" ${api.checked ? 'checked' : ''}
                 data-path="${api.path}" data-method="${api.httpMethod}">
@@ -102,11 +141,13 @@ async function handleCheck(event) {
     const path = checkbox.getAttribute('data-path');
     const httpMethod = checkbox.getAttribute('data-method');
     const checked = checkbox.checked;
+    const nickname = getNickname();
 
     try {
         const queryString = new URLSearchParams({
             httpMethod: httpMethod,
             path: path,
+            nickname: nickname,
             checked: checked
         }).toString();
 
