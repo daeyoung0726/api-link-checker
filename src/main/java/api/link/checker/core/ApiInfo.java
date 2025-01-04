@@ -4,14 +4,16 @@ public class ApiInfo {
     private String httpMethod;
     private String path;
     private String description;
+    private String nickname;
     private boolean checked;
 
     public ApiInfo() {}
 
-    public ApiInfo(String httpMethod, String path, String description, boolean checked) {
+    public ApiInfo(String httpMethod, String path, String description, String nickname, boolean checked) {
         this.httpMethod = httpMethod;
         this.path = path;
         this.description = description;
+        this.nickname = nickname;
         this.checked = checked;
     }
 
@@ -39,6 +41,13 @@ public class ApiInfo {
         this.description = description;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
     public boolean isChecked() {
         return checked;
     }

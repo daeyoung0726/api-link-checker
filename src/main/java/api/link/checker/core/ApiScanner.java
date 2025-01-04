@@ -77,7 +77,7 @@ public class ApiScanner implements ApplicationListener<ContextRefreshedEvent> {
                     String httpMethod = findHttpMethod(method);
                     String path = findPath(beanClass, method);
 
-                    apiInfos.add(new ApiInfo(httpMethod, path, trackApi.description(), false));
+                    apiInfos.add(new ApiInfo(httpMethod, path, trackApi.description(), "", false));
                 }
             }
             scannedApis.put(groupName, apiInfos);
@@ -115,6 +115,10 @@ public class ApiScanner implements ApplicationListener<ContextRefreshedEvent> {
                 // Preserve check state if already exists
                 if (existingApiMap.containsKey(key)) {
                     scannedApi.setChecked(existingApiMap.get(key).isChecked());
+                    scannedApi.setNickname(
+                            existingApiMap.get(key).isChecked()
+                                    ? existingApiMap.get(key).getNickname()
+                                    : "");
                 }
 
                 finalApiList.add(scannedApi);

@@ -33,8 +33,9 @@ public class TrackedApiController {
     public void updateCheckStatus(
             @RequestParam("httpMethod") String httpMethod,
             @RequestParam("path") String path,
+            @RequestParam("nickname") String nickname,
             @RequestParam("checked") boolean checked) {
-        apiCheckRepository.updateCheckStatus(httpMethod, path, checked);
+        apiCheckRepository.updateCheckStatus(httpMethod, path, nickname, checked);
     }
 
     @GetMapping("/swagger-links")

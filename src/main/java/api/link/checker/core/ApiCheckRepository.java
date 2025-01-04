@@ -77,7 +77,7 @@ public class ApiCheckRepository {
      * @param path       Path of the API.
      * @param checked    New check status.
      */
-    public void updateCheckStatus(String httpMethod, String path, boolean checked) {
+    public void updateCheckStatus(String httpMethod, String path, String nickname, boolean checked) {
         groupedApiMap.values().forEach(apiList -> {
             apiList.stream()
                     .filter(apiInfo ->
@@ -86,6 +86,7 @@ public class ApiCheckRepository {
                     )
                     .findFirst()
                     .ifPresent(apiInfo -> {
+                        apiInfo.setNickname(checked ? nickname : "");
                         apiInfo.setChecked(checked);
                     });
         });
