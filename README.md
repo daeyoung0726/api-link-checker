@@ -6,10 +6,14 @@
 
 ## 🚨 Important Notice
 
-`0.0.5` 이전 버전에서 오류가 발생할 수 있습니다.  
-👉 **최신 버전(0.0.5 이상)** 을 사용해 주세요.  
-Critical issues have been identified in versions earlier than `0.0.5`.  
-👉 Please use **version 0.0.5 or later**.
+`0.0.6` 이전 버전에서 오류가 발생할 수 있습니다.  
+👉 **최신 버전(0.0.6 이상)** 을 사용해 주세요.  
+Critical issues have been identified in versions earlier than `0.0.6`.  
+👉 Please use **version 0.0.6 or later**.
+
+## ⚙️ Version
+
+`0.1.0`: 닉네임 설정 기능 추가 / Nickname setting functionality added.
 
 ## Demo Video
 
