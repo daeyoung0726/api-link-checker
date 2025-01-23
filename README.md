@@ -31,15 +31,15 @@ https://github.com/user-attachments/assets/4b7d2b1d-1389-47fd-9f26-bebcc00dc1d1
 
 ### 1. 이 프로젝트는 무엇인가요?
 
-**API Link Checker**는 사용자가 설정한 RESTful API의 연결 여부를 확인하고 관리할 수 있는 라이브러리입니다.  
-Swagger와 연동하면 특정 RESTful API를 Swagger 문서의 설명으로 바로 이동할 수 있는 기능도 제공합니다.  
-RESTful API 설정 데이터를 로컬 파일 시스템에 JSON 형식으로 저장하여 영구적으로 관리할 수 있습니다.
+**API Link Checker**는 사용자가 설정한 REST API의 연결 여부를 확인하고 관리할 수 있는 라이브러리입니다.  
+Swagger와 연동하면 특정 REST API를 Swagger 문서의 설명으로 바로 이동할 수 있는 기능도 제공합니다.  
+REST API 설정 데이터를 로컬 파일 시스템에 JSON 형식으로 저장하여 영구적으로 관리할 수 있습니다.
 
 ---
 
 ### 2. 주요 기능
 
-- **RESTful API 연결 여부 체크**: API의 연결 상태를 UI에서 확인 및 관리 가능.
+- **REST API 연결 여부 체크**: API의 연결 상태를 UI에서 확인 및 관리 가능.
 - **Swagger 연동**: 특정 API를 Swagger 문서로 바로 이동할 수 있는 버튼 제공.
 - **데이터 영구 저장**: JSON 형식으로 로컬 파일 시스템에 저장하여 데이터베이스 없이도 관리 가능.
 - **환경별 파일 경로 지원**: Mac, Windows, Linux 등 다양한 운영 체제에서 파일 경로를 유연하게 설정 가능.
@@ -161,9 +161,9 @@ Spring Security를 사용하는 경우, 다음 경로를 허용해야 합니다:
 
 ### 1. What is this project?
 
-**API Link Checker** is a library that allows users to monitor and manage the connectivity status of their configured RESTful APIs.  
+**API Link Checker** is a library that allows users to monitor and manage the connectivity status of their configured REST APIs.  
 It also provides integration with Swagger, enabling users to navigate directly to specific API documentation in Swagger.  
-The configuration data for RESTful APIs is persistently stored as a JSON file on the local file system.
+The configuration data for REST APIs is persistently stored as a JSON file on the local file system.
 
 ---
 
