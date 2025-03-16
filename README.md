@@ -19,7 +19,11 @@ Critical issues have been identified in versions earlier than `0.0.6`.
 
 
 
-https://github.com/user-attachments/assets/4b7d2b1d-1389-47fd-9f26-bebcc00dc1d1
+
+https://github.com/user-attachments/assets/396fac48-b4ea-4b02-be57-573d070d59fe
+
+
+
 
 
 
